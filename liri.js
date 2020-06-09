@@ -5,7 +5,12 @@ var keys = require("./keys.js");
 var fs = require("fs");
 var axios = require("axios");
 var moment = require('moment'); // require
-var spotify = new Spotify(keys.spotify);
+
+var Spotify = require('node-spotify-api');
+var spotify = new Spotify({
+  id: keys.spotify.id,
+  secret: keys.spotify.secret
+});
 
 
 // This will search the Bands in Town Artist Events
@@ -40,17 +45,32 @@ axios.get(`https://rest.bandsintown.com/artists/${artists}/events?app_id=codingb
       console.log(error.config);
     });
   
-
-
 };
 
 
 // This will show information about the song 
 function getSong(){
 
-    
-};
+spotify
+  .search({ type: 'track', query: userSearch })
+  .then(function(data) {
+      var result = data.tracks.items[0]
+    console.log("Artist(s) : " , result.album.artists[0].name);
+    console.log("Song Name : " , result.name);
+    console.log("Preview : " , result.preview_url);
+    console.log("Album Name : " , result.album.name);
 
+  })
+  .catch(function(err) {
+    console.log("Error occurred : " + err);
+  });
+
+if ( userSearch === ""){
+    
+   userSearch = "The Sign";
+
+};
+};
 // This will output movie information
 function getMovie(){
 
@@ -60,4 +80,4 @@ function getMovie(){
 // Will run sptify-this-song for "I Want It That Way" as follows the text in random.txt
 function doWhatItSays(){
 
-};
+}
