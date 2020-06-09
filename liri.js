@@ -12,9 +12,35 @@ var spotify = new Spotify({
   secret: keys.spotify.secret
 });
 
+// Take two arguments.
+// The first will be the action (i.e. "deposit", "withdraw", etc.)
+// The second will be the amount that will be added, withdrawn, etc.
+var action = process.argv[2];
+var value = process.argv[3];
+
+// We will then create a switch-case statement (if-else would also work).
+// The switch-case will direct which function gets run.
+switch (action) {
+case "concert-this":
+  getBandsEvents(value);
+  break;
+
+case "spotify-this-song":
+  getSong(value);
+  break;
+
+case "movie-this":
+  getMovie(value);
+  break;
+
+case "do-what-it-says":
+  doWhatItSays();
+  break;
+}
+
 
 // This will search the Bands in Town Artist Events
-function getBandsEvents(){
+function getBandsEvents(artists){
     // Then run a request with axios to the OMDB API with the movie specified
 axios.get(`https://rest.bandsintown.com/artists/${artists}/events?app_id=codingbootcamp`).then(
     function(response) {
@@ -49,10 +75,14 @@ axios.get(`https://rest.bandsintown.com/artists/${artists}/events?app_id=codingb
 
 
 // This will show information about the song 
-function getSong(){
+function getSong(userSearch){
+
+  if (userSearch === undefined) {
+    userSearch = `"The Sign" Ace of Base`
+}
 
 spotify
-  .search({ type: 'track', query: userSearch })
+  .search({ type: 'track', query: userSearch  })
   .then(function(data) {
       var result = data.tracks.items[0]
     console.log("Artist(s) : " , result.album.artists[0].name);
@@ -65,18 +95,15 @@ spotify
     console.log("Error occurred : " + err);
   });
 
-if ( userSearch === ""){
-    
-   userSearch = "The Sign";
 
-};
 };
 
 // This will output movie information
-function getMovie(){
+function getMovie(movieName){
 
-    // Then run a request with axios to the OMDB API with the movie specified
+    // Run a request with axios to the OMDB API with the movie specified
 axios.get(`https://www.omdbapi.com/?t=${movieName}&y=&plot=short&apikey=trilogy`).then(
+
     function(response) {
       console.log("Title of the movie : " + response.data.Title);
       console.log("Year the movie came out : " + response.data.Year);
@@ -108,11 +135,20 @@ axios.get(`https://www.omdbapi.com/?t=${movieName}&y=&plot=short&apikey=trilogy`
       console.log(error.config);
     });
 
+
+//Response if user does not type in a movie title
+if (movieName === " ") {
+  console.log("-----------------------");
+  console.log("If you haven't watched 'Mr. Nobody,' then you should: http://www.imdb.com/title/tt0485947/");
+  console.log("It's on Netflix!");
 };
 
-getMovie();
+
+};
+
+
 
 // Will run sptify-this-song for "I Want It That Way" as follows the text in random.txt
 function doWhatItSays(){
 
-}
+};
