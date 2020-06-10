@@ -51,35 +51,23 @@ axios.get(`https://rest.bandsintown.com/artists/${artists}/events?app_id=codingb
       console.log("Date of the Event  : " + eventDate);
     })
     .catch(function(error) {
-      if (error.response) {
-        // The request was made and the server responded with a status code
-        // that falls out of the range of 2xx
-        console.log("---------------Data---------------");
-        console.log(error.response.data);
-        console.log("---------------Status---------------");
-        console.log(error.response.status);
-        console.log("---------------Status---------------");
-        console.log(error.response.headers);
-      } else if (error.request) {
-        // The request was made but no response was received
-        // `error.request` is an object that comes back with details pertaining to the error that occurred.
-        console.log(error.request);
-      } else {
-        // Something happened in setting up the request that triggered an Error
-        console.log("Error", error.message);
-      }
-      console.log(error.config);
-    });
-  
+      // Something happened in setting up the request that triggered an Error
+      console.log("Error", error.message);
+    
+  });
+    
 };
+
+
 
 
 // This will show information about the song 
 function getSong(userSearch){
 
+// If no song is provided then program will run default to "The Sign" by Ace of Base
   if (userSearch === undefined) {
-    userSearch = `"The Sign" Ace of Base`
-}
+    userSearch = `"The Sign" Ace of Base`;
+};
 
 spotify
   .search({ type: 'track', query: userSearch  })
@@ -91,17 +79,29 @@ spotify
     console.log("Album Name : " , result.album.name);
 
   })
-  .catch(function(err) {
-    console.log("Error occurred : " + err);
-  });
-
+  .catch(function(error) {
+      
+    // Something happened in setting up the request that triggered an Error
+    console.log("Error", error.message);
+  
+});
 
 };
+
 
 // This will output movie information
 function getMovie(movieName){
 
-    // Run a request with axios to the OMDB API with the movie specified
+//Response if user does not type in a movie title
+if (movieName === undefined) {
+  movieName = `Mr.Nobody`;
+  console.log("-----------------------");
+  console.log("If you haven't watched 'Mr. Nobody,' then you should: http://www.imdb.com/title/tt0485947/");
+  console.log("It's on Netflix!");
+  
+}
+    
+// Run a request with axios to the OMDB API with the movie specified
 axios.get(`https://www.omdbapi.com/?t=${movieName}&y=&plot=short&apikey=trilogy`).then(
 
     function(response) {
@@ -115,40 +115,25 @@ axios.get(`https://www.omdbapi.com/?t=${movieName}&y=&plot=short&apikey=trilogy`
       console.log("Actor in the movie : " + response.data.Actors);
     })
     .catch(function(error) {
-      if (error.response) {
-        // The request was made and the server responded with a status code
-        // that falls out of the range of 2xx
-        console.log("---------------Data---------------");
-        console.log(error.response.data);
-        console.log("---------------Status---------------");
-        console.log(error.response.status);
-        console.log("---------------Status---------------");
-        console.log(error.response.headers);
-      } else if (error.request) {
-        // The request was made but no response was received
-        // `error.request` is an object that comes back with details pertaining to the error that occurred.
-        console.log(error.request);
-      } else {
+      
         // Something happened in setting up the request that triggered an Error
         console.log("Error", error.message);
-      }
-      console.log(error.config);
+      
     });
 
-
-//Response if user does not type in a movie title
-if (movieName === " ") {
-  console.log("-----------------------");
-  console.log("If you haven't watched 'Mr. Nobody,' then you should: http://www.imdb.com/title/tt0485947/");
-  console.log("It's on Netflix!");
-};
-
-
 };
 
 
 
-// Will run sptify-this-song for "I Want It That Way" as follows the text in random.txt
+// Will run spotify-this-song for "I Want It That Way" as follows the text in random.txt
 function doWhatItSays(){
+  fs.readFile("random.txt", "utf8", function(error, data){
+    if (error) {
+      return console.log(error);
+    }
+    data = data.split(",");
+    var song = data[1]
+      getSong(song);
+  });
 
 };
