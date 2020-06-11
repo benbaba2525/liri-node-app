@@ -3,11 +3,9 @@
 ## Overview
 LIRI is like iPhone's SIRI. However, while SIRI is a Speech Interpretation and Recognition Interface, LIRI is a Language Interpretation and Recognition Interface. LIRI will be a command line node app that takes in parameters and gives you back data.
 
+### What Each Command Does
 
-
-What Each Command Does
-
-### node liri.js concert-this <artist/band name here> 
+##### node liri.js concert-this <artist/band name here> 
 
 
 This will search the Bands in Town Artist Events API ("https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp") for an artist and render the following information about each event to the terminal:
@@ -24,8 +22,7 @@ Important: There is no need to sign up for a Bands in Town api_id key. Use the c
 https://rest.bandsintown.com/artists/celine+dion/events?app_id=codingbootcamp
 
 
-
-### node liri.js spotify-this-song '<song name here>'
+##### node liri.js spotify-this-song '<song name here>'
 
 
 This will show the following information about the song in your terminal/bash window
@@ -48,7 +45,7 @@ Step Four: On the next screen, scroll down to where you see your client id and c
 
 
 
-### node liri.js movie-this '<movie name here>'
+##### node liri.js movie-this '<movie name here>'
 
 This will output the following information to your terminal/bash window:
   * Title of the movie.
@@ -66,12 +63,15 @@ If you haven't watched "Mr. Nobody," then you should: http://www.imdb.com/title/
 It's on Netflix!
 You'll use the axios package to retrieve data from the OMDB API. Like all of the in-class activities, the OMDB API requires an API key. You may use trilogy.
 
-
-### node liri.js do-what-it-says
+##### node liri.js do-what-it-says
 Using the fs Node package, LIRI will take the text inside of random.txt and then use it to call one of LIRI's commands.
 It should run spotify-this-song for "I Want it That Way," as follows the text in random.txt.
 Edit the text in random.txt to test out the feature for movie-this and concert-this.
 
+## Tools/Languages Used:
+ - NodeJS
+ - JavaScript
+ 
 ### APIs:
 - <a href="https://developer.spotify.com/">Spotify API</a>
 - <a href="http://www.omdbapi.com">OMDB API</a>
@@ -82,6 +82,26 @@ Edit the text in random.txt to test out the feature for movie-this and concert-t
 - <a href="https://www.npmjs.com/package/axios">Axios</a>
 - <a href="https://www.npmjs.com/package/moment">Moment</a>
 - <a href="https://www.npmjs.com/package/dotenv">DotEnv</a>
+  
+## Authors
+  - Kanyarut Pornamnuay
+  <br><a target="_blank" rel="nofollow" href="https://github.com/benbaba2525">Visit My Github Profile</a>
+  <br><a target="_blank" rel="nofollow" href="https://benbaba2525.github.io/My-Portfolio/">Visit My Portfolio</a>
+
+
+## Acknowledgments
+  - UCLA Coding Bootcamp   <a target="_blank" rel="nofollow" href="https://bootcamp.uclaextension.edu/coding/">Visit UCLA Coding Bootcamp</a>
+
+## Helpful Link
+
+  - <a target="_blank" rel="nofollow" href="https://api.jquery.com/">jQuery</a>
+  - <a target="_blank" rel="nofollow" href="https://firebase.google.com/">Firebase Documentation</a>
+  - <a target="_blank" rel="nofollow" href="https://momentjs.com/docs/">Moment.js Documentation</a>
+  - <a target="_blank" rel="nofollow" href="https://www.w3schools.com/html/html5_webstorage.asp">HTML5 localStorage W3Schools</a>
+
+
+
+
 
 
 
