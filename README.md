@@ -14,9 +14,6 @@ Name of the venue
 Venue location
 Date of the Event (use moment to format this as "MM/DD/YYYY")
 
-
-
-
 Important: There is no need to sign up for a Bands in Town api_id key. Use the codingbootcamp as your app_id. For example, the URL used to search for "Celine Dion" would look like the following:
 
 https://rest.bandsintown.com/artists/celine+dion/events?app_id=codingbootcamp
@@ -94,10 +91,11 @@ Edit the text in random.txt to test out the feature for movie-this and concert-t
 
 ## Helpful Link
 
-  - <a target="_blank" rel="nofollow" href="https://api.jquery.com/">jQuery</a>
-  - <a target="_blank" rel="nofollow" href="https://firebase.google.com/">Firebase Documentation</a>
+  - <a target="_blank" rel="nofollow" href="https://en.wikipedia.org/wiki/Node.js">Wikipedia: Node.js</a>
+  - <a target="_blank" rel="nofollow" href="https://nodejs.dev/learn">Learn Node.js</a>
+  - <a target="_blank" rel="nofollow" href="https://node.readthedocs.io/en/latest/api/fs/">File System (fs)</a>
   - <a target="_blank" rel="nofollow" href="https://momentjs.com/docs/">Moment.js Documentation</a>
-  - <a target="_blank" rel="nofollow" href="https://www.w3schools.com/html/html5_webstorage.asp">HTML5 localStorage W3Schools</a>
+  - <a target="_blank" rel="nofollow" href="https://www.npmjs.com/package/inquirer/v/0.2.3">InquirerJS</a>
 
 
 
