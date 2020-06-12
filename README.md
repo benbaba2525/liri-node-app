@@ -13,8 +13,9 @@ This will search the Bands in Town Artist Events API for an artist and render th
 - Venue location
 - Date of the Event (use moment to format this as "MM/DD/YYYY")
 
-![alt-concert-this](https://github.com/benbaba2525/liri-node-app/blob/master/2020-06-11%2020.41.46.gif)
+![alt-concert-this](https://github.com/benbaba2525/liri-node-app/blob/master/demoGif/2020-06-11%2020.41.46.gif)
 
+##
 
 #### * `2. node liri.js spotify-this-song '<song name here>'`
 
@@ -26,9 +27,11 @@ This will show the following information about the song in your terminal/bash wi
 - The album that the song is from
 - If no song is provided then your program will default to "The Sign" by Ace of Base.
 
+![alt-spotify-this-song](https://github.com/benbaba2525/liri-node-app/blob/master/demoGif/spotify.gif)
 
 
 
+##
 
 #### *`3. node liri.js movie-this '<movie name here>'`
 
@@ -46,9 +49,14 @@ If the user doesn't type a movie in, the program will output data for the movie 
 If you haven't watched "Mr. Nobody," then you should: http://www.imdb.com/title/tt0485947/
 It's on Netflix!
 
+![alt-movie-this](https://github.com/benbaba2525/liri-node-app/blob/master/demoGif/movie.gif)
+
+##
 
 #### * `4. node liri.js do-what-it-says`
 Run spotify-this-song for "I Want it That Way"
+![alt-movie-this](https://github.com/benbaba2525/liri-node-app/blob/master/demoGif/dowhatitsay.gif)
+
 
 ## Tools/Languages Used:
  - NodeJS
