@@ -134,7 +134,7 @@ axios.get(`https://www.omdbapi.com/?t=${movieName}&y=&plot=short&apikey=trilogy`
       console.log("Actor in the movie : " + response.data.Actors);
       console.log("");
       console.log("===============================================================");
-      console.log("");c
+      console.log("");
     })
     .catch(function(error) {
       
