@@ -1,17 +1,11 @@
-<<<<<<< HEAD
-# liri-node-app
-
-/Users/ben/Desktop/Class-HW/liri-node-app/Screen Recording 2020-06-10 at 11.12.38 PM.mov
-=======
 # Liri Bot
 
-## Overview
+# Overview
 LIRI is like iPhone's SIRI. However, while SIRI is a Speech Interpretation and Recognition Interface, LIRI is a Language Interpretation and Recognition Interface. LIRI will be a command line node app that takes in parameters and gives you back data.
 
-### What Each Command Does
+## What Each Command Does
 
-##### node liri.js concert-this <artist/band name here> 
-
+#### node liri.js concert-this <artist/band name here> 
 
 This will search the Bands in Town Artist Events API ("https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp") for an artist and render the following information about each event to the terminal:
 
@@ -19,12 +13,9 @@ Name of the venue
 Venue location
 Date of the Event (use moment to format this as "MM/DD/YYYY")
 
-Important: There is no need to sign up for a Bands in Town api_id key. Use the codingbootcamp as your app_id. For example, the URL used to search for "Celine Dion" would look like the following:
+![alt-concert-this](https://github.com/benbaba2525/liri-node-app/blob/master/2020-06-11%2020.41.46.gif)
 
-https://rest.bandsintown.com/artists/celine+dion/events?app_id=codingbootcamp
-
-
-##### node liri.js spotify-this-song '<song name here>'
+#### node liri.js spotify-this-song '<song name here>'
 
 
 This will show the following information about the song in your terminal/bash window
@@ -47,7 +38,7 @@ Step Four: On the next screen, scroll down to where you see your client id and c
 
 
 
-##### node liri.js movie-this '<movie name here>'
+#### node liri.js movie-this '<movie name here>'
 
 This will output the following information to your terminal/bash window:
   * Title of the movie.
@@ -65,7 +56,7 @@ If you haven't watched "Mr. Nobody," then you should: http://www.imdb.com/title/
 It's on Netflix!
 You'll use the axios package to retrieve data from the OMDB API. Like all of the in-class activities, the OMDB API requires an API key. You may use trilogy.
 
-##### node liri.js do-what-it-says
+#### node liri.js do-what-it-says
 Using the fs Node package, LIRI will take the text inside of random.txt and then use it to call one of LIRI's commands.
 It should run spotify-this-song for "I Want it That Way," as follows the text in random.txt.
 Edit the text in random.txt to test out the feature for movie-this and concert-this.
