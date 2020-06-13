@@ -49,12 +49,17 @@ If the user doesn't type a movie in, the program will output data for the movie 
 If you haven't watched "Mr. Nobody," then you should: http://www.imdb.com/title/tt0485947/
 It's on Netflix!
 
+
+
 ![alt-movie-this](https://github.com/benbaba2525/liri-node-app/blob/master/demoGif/movie.gif)
 
 ##
 
 #### * `4. node liri.js do-what-it-says`
+
 Run spotify-this-song for "I Want it That Way"
+<br><br>
+
 ![alt-movie-this](https://github.com/benbaba2525/liri-node-app/blob/master/demoGif/dowhatitsay.gif)
 
 
